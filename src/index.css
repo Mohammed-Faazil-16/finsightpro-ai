@@ -2,39 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* FinSight Pro Design System - Professional Financial Platform */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Financial Brand Colors */
+    --background: 217 33% 97%;
+    --foreground: 220 13% 18%;
 
+    /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 13% 18%;
 
+    /* Interactive Elements */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 13% 18%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Primary - Professional Navy */
+    --primary: 220 39% 11%;
     --primary-foreground: 210 40% 98%;
+    --primary-hover: 220 39% 15%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Financial Blue */
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent - Success Green */
+    --accent: 142 71% 45%;
+    --accent-foreground: 220 13% 18%;
+    --accent-light: 142 71% 90%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Muted Grays */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8.9% 46.1%;
 
+    /* Status Colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Financial Data Colors */
+    --profit: 142 71% 45%;
+    --loss: 0 84.2% 60.2%;
+    --neutral: 220 8.9% 46.1%;
+
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 39% 11%;
+
+    /* Financial Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(142 71% 35%));
+    --gradient-chart: linear-gradient(180deg, hsl(var(--accent) / 0.3), hsl(var(--accent) / 0.1));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+
+    /* Professional Shadows */
+    --shadow-card: 0 1px 3px hsl(var(--primary) / 0.12), 0 1px 2px hsl(var(--primary) / 0.24);
+    --shadow-elevated: 0 4px 6px hsl(var(--primary) / 0.07), 0 2px 4px hsl(var(--primary) / 0.06);
+    --shadow-focus: 0 0 0 3px hsl(var(--accent) / 0.12);
+
+    /* Smooth Transitions */
+    --transition-all: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
@@ -56,29 +89,36 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Mode Financial Theme */
+    --background: 220 27% 8%;
+    --foreground: 220 14% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 27% 12%;
+    --card-foreground: 220 14% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 27% 12%;
+    --popover-foreground: 220 14% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 142 71% 45%;
+    --primary-foreground: 220 27% 8%;
+    --primary-hover: 142 71% 40%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 27% 16%;
+    --secondary-foreground: 220 14% 96%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 142 71% 45%;
+    --accent-foreground: 220 27% 8%;
+    --accent-light: 142 71% 15%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 220 27% 16%;
+    --muted-foreground: 220 8.9% 66%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --success: 142 71% 45%;
+    --success-foreground: 220 27% 8%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 27% 8%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 220 14% 96%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
